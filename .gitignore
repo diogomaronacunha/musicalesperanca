@@ -1,0 +1,13 @@
+node_modules/
+.env
+.env.local
+.env.*.local
+.aiox/
+.ai/
+outputs/
+credentials/
+*.log
+dist/
+build/
+.next/
+.turbo/

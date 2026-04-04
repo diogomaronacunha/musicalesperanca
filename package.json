@@ -1,0 +1,13 @@
+{
+  "name": "musicalesperanca",
+  "version": "1.0.0",
+  "description": "Musical Esperança — projeto gerenciado com Synkra AIOX",
+  "scripts": {
+    "dev": "echo 'Configure seu script de dev aqui'",
+    "lint": "echo 'Configure linting aqui'",
+    "test": "echo 'Configure testes aqui'",
+    "build": "echo 'Configure build aqui'"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}
