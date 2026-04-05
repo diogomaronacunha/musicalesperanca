@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import { integrantes } from '@/data/integrantes'
 import Link from 'next/link'
 
@@ -21,9 +22,21 @@ export default function SobrePage() {
         </div>
       </section>
 
-      {/* História */}
+      {/* Foto + História */}
       <section className="py-20">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6">
+          {/* Foto da banda */}
+          <div className="relative w-full aspect-video sm:aspect-[16/7] rounded-2xl overflow-hidden mb-12 shadow-2xl shadow-primary-900/20">
+            <Image
+              src="/images/banda-foto-principal.jpg"
+              alt="Musical Esperança — foto oficial da banda"
+              fill
+              className="object-cover object-top"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-gray-950/60 to-transparent" />
+          </div>
+
+        <div className="max-w-4xl mx-auto">
           <div className="card p-8 md:p-12">
             <div className="flex items-center gap-3 mb-8">
               <div className="w-1 h-12 bg-primary-500 rounded-full" />
@@ -49,6 +62,7 @@ export default function SobrePage() {
               </p>
             </div>
           </div>
+        </div>
         </div>
       </section>
 

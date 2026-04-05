@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import Image from 'next/image'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
@@ -98,15 +99,25 @@ export default function GaleriaPage() {
           </div>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
+            {/* Foto real da banda — destaque */}
+            <div className="col-span-2 row-span-2 aspect-square relative rounded-xl overflow-hidden border border-primary-700/50 hover:border-primary-500 transition-colors cursor-pointer">
+              <Image
+                src="/images/banda-foto-principal.jpg"
+                alt="Musical Esperança — foto oficial"
+                fill
+                className="object-cover object-top hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+
+            {/* Placeholders para fotos futuras */}
             {fotos.map((foto) => (
               <div
                 key={foto.id}
                 className="aspect-square bg-gray-800 rounded-xl overflow-hidden hover:opacity-90 transition-opacity cursor-pointer border border-gray-700/50 hover:border-primary-700/50 flex items-center justify-center"
               >
-                {/* Placeholder — substituir por <Image> com src real */}
                 <div className="text-center text-gray-600">
-                  <div className="text-4xl mb-2">📷</div>
-                  <p className="text-xs">Foto {foto.id}</p>
+                  <div className="text-3xl mb-1">📷</div>
+                  <p className="text-xs">Em breve</p>
                 </div>
               </div>
             ))}
