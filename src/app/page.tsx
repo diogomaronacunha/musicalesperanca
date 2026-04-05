@@ -24,34 +24,34 @@ export default function HomePage() {
           <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-primary-800/10 rounded-full blur-3xl" />
         </div>
 
-        <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 text-center py-24">
-          <div className="inline-flex items-center gap-2 bg-primary-900/50 border border-primary-700/50 rounded-full px-4 py-1.5 text-primary-300 text-sm font-medium mb-8">
+        <div className="relative z-10 max-w-6xl mx-auto px-5 sm:px-6 text-center py-16 sm:py-24">
+          <div className="inline-flex items-center gap-2 bg-primary-900/50 border border-primary-700/50 rounded-full px-3 py-1.5 text-primary-300 text-xs sm:text-sm font-medium mb-6">
             <span className="w-2 h-2 bg-primary-400 rounded-full animate-pulse" />
             Banda para bailes no Sul do Brasil
           </div>
 
-          <h1 className="font-display text-5xl sm:text-6xl md:text-7xl font-bold text-white leading-tight mb-6">
+          <h1 className="font-display text-4xl sm:text-6xl md:text-7xl font-bold text-white leading-tight mb-5">
             Musical<br />
             <span className="text-primary-400">Esperança</span>
           </h1>
 
-          <p className="text-xl text-gray-300 max-w-2xl mx-auto mb-10 leading-relaxed">
+          <p className="text-base sm:text-xl text-gray-300 max-w-2xl mx-auto mb-8 leading-relaxed">
             Animando bailes e festas com muita música, alegria e tradição pelo interior de
             <strong className="text-white"> Santa Catarina</strong> e
             <strong className="text-white"> Rio Grande do Sul</strong>.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link href="/contratacao" className="btn-primary text-base px-8 py-4">
+          <div className="flex flex-col sm:flex-row gap-3 justify-center">
+            <Link href="/contratacao" className="btn-primary text-base px-8 py-4 justify-center">
               Contratar a Banda
             </Link>
-            <Link href="/agenda" className="btn-outline text-base px-8 py-4">
+            <Link href="/agenda" className="btn-outline text-base px-8 py-4 justify-center">
               Ver Próximos Shows
             </Link>
           </div>
 
           {/* Estados */}
-          <div className="mt-16 flex flex-col sm:flex-row items-center justify-center gap-8 text-gray-500 text-sm">
+          <div className="mt-10 sm:mt-16 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 text-gray-500 text-sm">
             <div className="flex items-center gap-2">
               <span className="text-primary-400 text-2xl">🤠</span>
               <span>Gauchesco & Nativista</span>
@@ -78,14 +78,14 @@ export default function HomePage() {
       </section>
 
       {/* Por que contratar */}
-      <section className="py-24 bg-gray-900/50">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <div className="text-center mb-14">
+      <section className="py-14 sm:py-24 bg-gray-900/50">
+        <div className="max-w-6xl mx-auto px-5 sm:px-6">
+          <div className="text-center mb-10 sm:mb-14">
             <p className="section-subtitle mb-3">Por que nos escolher</p>
             <h2 className="section-title">Uma banda de verdade para o seu evento</h2>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {[
               { icone: '🎵', titulo: 'Repertório variado', texto: 'Gauchesco, sertanejo, forró, vanerão e muito mais para animar todo tipo de público.' },
               { icone: '🎤', titulo: '5 músicos profissionais', texto: 'Equipe experiente e dedicada para garantir o sucesso do seu evento.' },
@@ -103,9 +103,9 @@ export default function HomePage() {
       </section>
 
       {/* Próximos shows */}
-      <section className="py-24">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-12">
+      <section className="py-14 sm:py-24">
+        <div className="max-w-6xl mx-auto px-5 sm:px-6">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-8 sm:mb-12">
             <div>
               <p className="section-subtitle mb-2">Agenda</p>
               <h2 className="section-title">Próximos shows</h2>
@@ -137,14 +137,14 @@ export default function HomePage() {
       </section>
 
       {/* Estilos musicais */}
-      <section className="py-24 bg-gray-900/50">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <div className="text-center mb-14">
+      <section className="py-14 sm:py-24 bg-gray-900/50">
+        <div className="max-w-6xl mx-auto px-5 sm:px-6">
+          <div className="text-center mb-10 sm:mb-14">
             <p className="section-subtitle mb-3">Repertório</p>
             <h2 className="section-title">Música para todos os gostos</h2>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
             {estilos.map((estilo) => (
               <div key={estilo.id} className="card p-6 hover:border-primary-700/50 transition-colors">
                 <div className="text-3xl mb-3">{estilo.icone}</div>

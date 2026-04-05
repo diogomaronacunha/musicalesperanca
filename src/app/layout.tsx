@@ -3,6 +3,7 @@ import { Inter, Playfair_Display } from 'next/font/google'
 import './globals.css'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import MobileBar from '@/components/MobileBar'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -13,6 +14,12 @@ const playfair = Playfair_Display({
   subsets: ['latin'],
   variable: '--font-playfair',
 })
+
+export const viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  maximumScale: 1,
+}
 
 export const metadata: Metadata = {
   title: {
@@ -39,8 +46,9 @@ export default function RootLayout({
     <html lang="pt-BR" className={`${inter.variable} ${playfair.variable}`}>
       <body>
         <Header />
-        <main className="pt-16">{children}</main>
+        <main className="pt-16 pb-16 md:pb-0">{children}</main>
         <Footer />
+        <MobileBar />
       </body>
     </html>
   )

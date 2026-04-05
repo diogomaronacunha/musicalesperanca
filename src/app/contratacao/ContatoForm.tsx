@@ -93,7 +93,7 @@ export default function ContatoForm() {
                 value={form.nome}
                 onChange={handleChange}
                 placeholder="Seu nome"
-                className="w-full bg-gray-800 border border-gray-700 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-primary-500 transition-colors"
+                className="w-full bg-gray-800 border border-gray-700 rounded-xl px-4 py-3.5 text-base text-white placeholder-gray-500 focus:outline-none focus:border-primary-500 transition-colors"
               />
             </div>
             <div>
@@ -107,7 +107,7 @@ export default function ContatoForm() {
                 value={form.telefone}
                 onChange={handleChange}
                 placeholder="(xx) xxxxx-xxxx"
-                className="w-full bg-gray-800 border border-gray-700 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-primary-500 transition-colors"
+                className="w-full bg-gray-800 border border-gray-700 rounded-xl px-4 py-3.5 text-base text-white placeholder-gray-500 focus:outline-none focus:border-primary-500 transition-colors"
               />
             </div>
           </div>
@@ -123,7 +123,7 @@ export default function ContatoForm() {
               value={form.email}
               onChange={handleChange}
               placeholder="seuemail@exemplo.com"
-              className="w-full bg-gray-800 border border-gray-700 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-primary-500 transition-colors"
+              className="w-full bg-gray-800 border border-gray-700 rounded-xl px-4 py-3.5 text-base text-white placeholder-gray-500 focus:outline-none focus:border-primary-500 transition-colors"
             />
           </div>
 
@@ -138,7 +138,7 @@ export default function ContatoForm() {
                 required
                 value={form.tipoEvento}
                 onChange={handleChange}
-                className="w-full bg-gray-800 border border-gray-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-primary-500 transition-colors"
+                className="w-full bg-gray-800 border border-gray-700 rounded-xl px-4 py-3.5 text-base text-white focus:outline-none focus:border-primary-500 transition-colors"
               >
                 <option value="">Selecione o tipo</option>
                 <option>Baile / Dança</option>
@@ -161,7 +161,7 @@ export default function ContatoForm() {
                 required
                 value={form.data}
                 onChange={handleChange}
-                className="w-full bg-gray-800 border border-gray-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-primary-500 transition-colors"
+                className="w-full bg-gray-800 border border-gray-700 rounded-xl px-4 py-3.5 text-base text-white focus:outline-none focus:border-primary-500 transition-colors"
               />
             </div>
           </div>
@@ -178,7 +178,7 @@ export default function ContatoForm() {
                 value={form.cidade}
                 onChange={handleChange}
                 placeholder="Cidade do evento"
-                className="w-full bg-gray-800 border border-gray-700 rounded-xl px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:border-primary-500 transition-colors"
+                className="w-full bg-gray-800 border border-gray-700 rounded-xl px-4 py-3.5 text-base text-white placeholder-gray-500 focus:outline-none focus:border-primary-500 transition-colors"
               />
             </div>
             <div>
@@ -190,7 +190,7 @@ export default function ContatoForm() {
                 required
                 value={form.estado}
                 onChange={handleChange}
-                className="w-full bg-gray-800 border border-gray-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-primary-500 transition-colors"
+                className="w-full bg-gray-800 border border-gray-700 rounded-xl px-4 py-3.5 text-base text-white focus:outline-none focus:border-primary-500 transition-colors"
               >
                 <option value="">Selecione</option>
                 <option value="SC">Santa Catarina</option>
@@ -209,7 +209,7 @@ export default function ContatoForm() {
               name="publico"
               value={form.publico}
               onChange={handleChange}
-              className="w-full bg-gray-800 border border-gray-700 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-primary-500 transition-colors"
+              className="w-full bg-gray-800 border border-gray-700 rounded-xl px-4 py-3.5 text-base text-white focus:outline-none focus:border-primary-500 transition-colors"
             >
               <option value="">Estimativa de pessoas</option>
               <option>Até 50 pessoas</option>

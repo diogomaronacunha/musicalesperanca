@@ -55,7 +55,7 @@ export default function SobrePage() {
       {/* Valores */}
       <section className="py-16 bg-gray-900/30">
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
             {[
               { icone: '🎯', titulo: 'Nossa Missão', texto: 'Proporcionar experiências musicais inesquecíveis, animando eventos com profissionalismo e alegria.' },
               { icone: '🌟', titulo: 'Nossos Valores', texto: 'Comprometimento, pontualidade, qualidade musical e respeito pelo público e pela tradição gaúcha.' },
@@ -79,7 +79,7 @@ export default function SobrePage() {
             <h2 className="section-title">Os Integrantes</h2>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6">
             {integrantes.map((integrante) => (
               <div key={integrante.id} className="card p-6 text-center hover:border-primary-700/50 transition-colors">
                 {/* Foto placeholder */}
