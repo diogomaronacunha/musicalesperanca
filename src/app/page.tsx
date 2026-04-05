@@ -18,68 +18,69 @@ export default function HomePage() {
     <>
       {/* Hero */}
       <section className="relative min-h-screen flex items-center overflow-hidden bg-gray-950">
-        {/* Foto da banda como fundo */}
+        {/* Gradiente de fundo limpo */}
         <div className="absolute inset-0">
-          <Image
-            src="/images/banda-foto-principal.jpg"
-            alt="Musical Esperança"
-            fill
-            className="object-cover object-center opacity-25"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-gray-950 via-gray-950/80 to-gray-950/40" />
-          <div className="absolute inset-0 bg-gradient-to-t from-gray-950 via-transparent to-gray-950/60" />
+          <div className="absolute inset-0 bg-gradient-to-br from-primary-950/40 via-gray-950 to-gray-950" />
+          <div className="absolute top-1/3 left-1/4 w-96 h-96 bg-primary-700/10 rounded-full blur-3xl" />
+          <div className="absolute bottom-1/4 right-1/3 w-64 h-64 bg-primary-900/20 rounded-full blur-3xl" />
         </div>
 
-        <div className="relative z-10 max-w-6xl mx-auto px-5 sm:px-6 py-16 sm:py-24">
-          <div className="max-w-2xl">
-            <div className="inline-flex items-center gap-2 bg-primary-900/60 border border-primary-700/50 rounded-full px-3 py-1.5 text-primary-300 text-xs sm:text-sm font-medium mb-6">
-              <span className="w-2 h-2 bg-primary-400 rounded-full animate-pulse" />
-              Banda para bailes no Sul do Brasil
+        <div className="relative z-10 w-full max-w-6xl mx-auto px-5 sm:px-6 py-16 sm:py-24">
+          <div className="flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
+
+            {/* Texto à esquerda */}
+            <div className="flex-1 text-center lg:text-left">
+              <div className="inline-flex items-center gap-2 bg-primary-900/60 border border-primary-700/50 rounded-full px-3 py-1.5 text-primary-300 text-xs sm:text-sm font-medium mb-6">
+                <span className="w-2 h-2 bg-primary-400 rounded-full animate-pulse" />
+                Banda para bailes no Sul do Brasil
+              </div>
+
+              <h1 className="font-display text-5xl sm:text-6xl md:text-7xl font-bold text-white leading-tight mb-5">
+                Musical<br />
+                <span className="text-primary-400">Esperança</span>
+              </h1>
+
+              <p className="text-base sm:text-xl text-gray-300 mb-8 leading-relaxed">
+                Animando bailes e festas com muita música, alegria e tradição pelo interior de
+                <strong className="text-white"> Santa Catarina</strong> e
+                <strong className="text-white"> Rio Grande do Sul</strong>.
+              </p>
+
+              <div className="flex flex-col sm:flex-row gap-3 justify-center lg:justify-start">
+                <Link href="/contratacao" className="btn-primary text-base px-8 py-4 justify-center">
+                  Contratar a Banda
+                </Link>
+                <Link href="/agenda" className="btn-outline text-base px-8 py-4 justify-center">
+                  Ver Próximos Shows
+                </Link>
+              </div>
+
+              {/* Estilos */}
+              <div className="mt-8 flex flex-wrap gap-2 justify-center lg:justify-start">
+                {['🤠 Gauchesco', '🎸 Sertanejo', '🪗 Forró', '💃 Vanerão'].map((tag) => (
+                  <span key={tag} className="bg-gray-800/80 border border-gray-700/50 text-gray-300 text-sm px-3 py-1.5 rounded-full">
+                    {tag}
+                  </span>
+                ))}
+              </div>
             </div>
 
-            <h1 className="font-display text-5xl sm:text-6xl md:text-7xl font-bold text-white leading-tight mb-5">
-              Musical<br />
-              <span className="text-primary-400">Esperança</span>
-            </h1>
-
-            <p className="text-base sm:text-xl text-gray-300 max-w-xl mb-8 leading-relaxed">
-              Animando bailes e festas com muita música, alegria e tradição pelo interior de
-              <strong className="text-white"> Santa Catarina</strong> e
-              <strong className="text-white"> Rio Grande do Sul</strong>.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-3">
-              <Link href="/contratacao" className="btn-primary text-base px-8 py-4 justify-center">
-                Contratar a Banda
-              </Link>
-              <Link href="/agenda" className="btn-outline text-base px-8 py-4 justify-center">
-                Ver Próximos Shows
-              </Link>
+            {/* Foto à direita — card estilizado */}
+            <div className="flex-shrink-0 w-full max-w-sm lg:max-w-md">
+              <div className="relative rounded-3xl overflow-hidden border-2 border-primary-700/40 shadow-2xl shadow-primary-900/30">
+                <Image
+                  src="/images/banda-foto-principal.jpg"
+                  alt="Musical Esperança — foto oficial da banda"
+                  width={500}
+                  height={420}
+                  className="w-full object-cover object-bottom"
+                  priority
+                />
+                {/* Overlay sutil na base */}
+                <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-gray-950/60 to-transparent" />
+              </div>
             </div>
 
-            {/* Estilos */}
-            <div className="mt-10 sm:mt-14 flex flex-wrap gap-3">
-              {['🤠 Gauchesco', '🎸 Sertanejo', '🪗 Forró', '💃 Vanerão'].map((tag) => (
-                <span key={tag} className="bg-gray-800/80 border border-gray-700/50 text-gray-300 text-sm px-3 py-1.5 rounded-full">
-                  {tag}
-                </span>
-              ))}
-            </div>
-          </div>
-        </div>
-
-        {/* Foto destacada no lado direito em telas grandes */}
-        <div className="hidden lg:block absolute right-0 top-0 bottom-0 w-1/2">
-          <div className="relative h-full">
-            <Image
-              src="/images/banda-foto-principal.jpg"
-              alt="Musical Esperança — banda ao vivo"
-              fill
-              className="object-cover object-center"
-              priority
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-gray-950 to-transparent" />
           </div>
         </div>
 
