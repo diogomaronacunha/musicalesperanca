@@ -13,7 +13,7 @@ export interface Show {
 export const shows: Show[] = [
   {
     id: 1,
-    data: '2025-05-10',
+    data: '2026-05-09',
     hora: '21:00',
     local: 'Salão de Baile Exemplo',
     cidade: 'Chapecó',
@@ -23,7 +23,7 @@ export const shows: Show[] = [
   },
   {
     id: 2,
-    data: '2025-05-17',
+    data: '2026-05-16',
     hora: '20:00',
     local: 'CTG Regional',
     cidade: 'Passo Fundo',
@@ -33,7 +33,7 @@ export const shows: Show[] = [
   },
   {
     id: 3,
-    data: '2025-05-24',
+    data: '2026-05-23',
     hora: '21:30',
     local: 'Clube Municipal',
     cidade: 'Joaçaba',

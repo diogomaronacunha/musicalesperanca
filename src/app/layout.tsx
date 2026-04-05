@@ -22,6 +22,7 @@ export const viewport = {
 }
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://musicalesperanca.com.br'),
   title: {
     default: 'Musical Esperança — Banda para Bailes | SC e RS',
     template: '%s | Musical Esperança',
@@ -34,6 +35,9 @@ export const metadata: Metadata = {
     description: 'Animando bailes e festas pelo interior do Sul do Brasil.',
     locale: 'pt_BR',
     type: 'website',
+    url: 'https://musicalesperanca.com.br',
+    siteName: 'Musical Esperança',
+    images: [{ url: '/images/banda-foto-principal.jpg', width: 500, height: 420, alt: 'Musical Esperança' }],
   },
 }
 

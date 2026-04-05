@@ -28,9 +28,15 @@ const initialForm: FormData = {
 
 type Status = 'idle' | 'sending' | 'success' | 'error'
 
+function getTodayString() {
+  const now = new Date()
+  return `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`
+}
+
 export default function ContatoForm() {
   const [form, setForm] = useState<FormData>(initialForm)
   const [status, setStatus] = useState<Status>('idle')
+  const minDate = getTodayString()
 
   function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) {
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }))
@@ -159,6 +165,7 @@ export default function ContatoForm() {
                 type="date"
                 name="data"
                 required
+                min={minDate}
                 value={form.data}
                 onChange={handleChange}
                 className="w-full bg-gray-800 border border-gray-700 rounded-xl px-4 py-3.5 text-base text-white focus:outline-none focus:border-primary-500 transition-colors"

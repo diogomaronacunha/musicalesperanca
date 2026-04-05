@@ -28,18 +28,4 @@ export const integrantes: Integrante[] = [
     foto: '/images/integrante-3.jpg',
     descricao: 'Adicione a descrição do integrante aqui.',
   },
-  {
-    id: 4,
-    nome: 'Integrante 4',
-    instrumento: 'Baixo',
-    foto: '/images/integrante-4.jpg',
-    descricao: 'Adicione a descrição do integrante aqui.',
-  },
-  {
-    id: 5,
-    nome: 'Integrante 5',
-    instrumento: 'Bateria / Percussão',
-    foto: '/images/integrante-5.jpg',
-    descricao: 'Adicione a descrição do integrante aqui.',
-  },
 ]

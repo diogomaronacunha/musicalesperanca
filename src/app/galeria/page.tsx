@@ -7,30 +7,8 @@ export const metadata: Metadata = {
   description: 'Fotos e vídeos dos shows da Musical Esperança pelo interior de Santa Catarina e Rio Grande do Sul.',
 }
 
-// Vídeos do YouTube (substituir pelos IDs reais)
-const videos = [
-  {
-    id: 1,
-    titulo: 'Show ao vivo — Baile em Chapecó/SC',
-    youtubeId: 'dQw4w9WgXcQ', // substituir pelo ID real
-    descricao: 'Uma noite inesquecível no interior de Santa Catarina.',
-  },
-  {
-    id: 2,
-    titulo: 'Gauchesco e Vanerão — RS',
-    youtubeId: 'dQw4w9WgXcQ', // substituir pelo ID real
-    descricao: 'Tradição gaúcha com muito ritmo e animação.',
-  },
-  {
-    id: 3,
-    titulo: 'Forró e Sertanejo — Festa Junina',
-    youtubeId: 'dQw4w9WgXcQ', // substituir pelo ID real
-    descricao: 'Repertório variado para animar qualquer evento.',
-  },
-]
-
 // Fotos placeholder
-const fotos = Array.from({ length: 9 }, (_, i) => ({
+const fotos = Array.from({ length: 3 }, (_, i) => ({
   id: i + 1,
   alt: `Foto do show ${i + 1}`,
 }))
@@ -57,34 +35,23 @@ export default function GaleriaPage() {
             <h2 className="text-2xl font-display font-bold text-white">Vídeos</h2>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {videos.map((video) => (
-              <div key={video.id} className="card overflow-hidden hover:border-primary-700/50 transition-colors">
-                <div className="aspect-video bg-gray-800 relative">
-                  <iframe
-                    src={`https://www.youtube.com/embed/${video.youtubeId}`}
-                    title={video.titulo}
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                    className="w-full h-full"
-                  />
-                </div>
-                <div className="p-4">
-                  <h3 className="text-white font-semibold text-sm mb-1">{video.titulo}</h3>
-                  <p className="text-gray-500 text-xs">{video.descricao}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-8 text-center">
+          <div className="card p-12 text-center">
+            <div className="text-5xl mb-5">🎬</div>
+            <h3 className="text-white font-semibold text-xl mb-3">Assista nossos shows</h3>
+            <p className="text-gray-400 mb-8 max-w-md mx-auto">
+              Vídeos dos nossos shows ao vivo estão disponíveis na nossa página do Facebook.
+              Siga para não perder nenhuma novidade!
+            </p>
             <a
               href="https://www.facebook.com/musicalesperanca"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-outline"
+              className="btn-primary inline-flex"
             >
-              Ver mais vídeos no Facebook →
+              <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+              </svg>
+              Ver vídeos no Facebook
             </a>
           </div>
         </div>
@@ -123,9 +90,6 @@ export default function GaleriaPage() {
             ))}
           </div>
 
-          <p className="text-center text-gray-500 text-sm mt-8">
-            * Adicione as fotos reais na pasta <code className="bg-gray-800 px-1.5 py-0.5 rounded text-primary-300">/public/images/</code>
-          </p>
         </div>
       </section>
 

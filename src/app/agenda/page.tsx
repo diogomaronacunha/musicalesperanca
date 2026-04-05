@@ -18,8 +18,18 @@ function formatDate(dateStr: string) {
   }
 }
 
-const showsSC = shows.filter((s) => s.estado === 'SC')
-const showsRS = shows.filter((s) => s.estado === 'RS')
+const today = new Date()
+today.setHours(0, 0, 0, 0)
+
+const showsFuturos = shows
+  .filter((s) => {
+    const [y, m, d] = s.data.split('-').map(Number)
+    return new Date(y, m - 1, d) >= today
+  })
+  .sort((a, b) => a.data.localeCompare(b.data))
+
+const showsSC = showsFuturos.filter((s) => s.estado === 'SC')
+const showsRS = showsFuturos.filter((s) => s.estado === 'RS')
 
 export default function AgendaPage() {
   return (
@@ -38,7 +48,7 @@ export default function AgendaPage() {
       {/* Todos os shows */}
       <section className="py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
-          {shows.length === 0 ? (
+          {showsFuturos.length === 0 ? (
             <div className="card p-12 text-center">
               <p className="text-4xl mb-4">🎵</p>
               <h2 className="text-white font-semibold text-xl mb-2">Novidades em breve!</h2>
@@ -56,7 +66,7 @@ export default function AgendaPage() {
             </div>
           ) : (
             <div className="space-y-4">
-              {shows.map((show) => {
+              {showsFuturos.map((show) => {
                 const dt = formatDate(show.data)
                 return (
                   <div

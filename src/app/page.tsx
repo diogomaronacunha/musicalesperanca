@@ -11,7 +11,15 @@ function formatDate(dateStr: string) {
   })
 }
 
-const proximosShows = shows.slice(0, 3)
+const today = new Date()
+today.setHours(0, 0, 0, 0)
+
+const proximosShows = shows
+  .filter((s) => {
+    const [y, m, d] = s.data.split('-').map(Number)
+    return new Date(y, m - 1, d) >= today
+  })
+  .slice(0, 3)
 
 export default function HomePage() {
   return (
@@ -103,7 +111,7 @@ export default function HomePage() {
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
             {[
               { icone: '🎵', titulo: 'Repertório variado', texto: 'Gauchesco, sertanejo, forró, vanerão e muito mais para animar todo tipo de público.' },
-              { icone: '🎤', titulo: '5 músicos profissionais', texto: 'Equipe experiente e dedicada para garantir o sucesso do seu evento.' },
+              { icone: '🎤', titulo: '3 músicos profissionais', texto: 'Equipe experiente e dedicada para garantir o sucesso do seu evento.' },
               { icone: '🌍', titulo: 'SC e RS', texto: 'Atendemos bailes e festas por todo o interior de Santa Catarina e Rio Grande do Sul.' },
               { icone: '🤝', titulo: 'Comprometidos', texto: 'Pontualidade, profissionalismo e animação garantidos em cada apresentação.' },
             ].map((item) => (
@@ -130,24 +138,32 @@ export default function HomePage() {
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {proximosShows.map((show) => (
-              <div key={show.id} className="card p-6 hover:border-primary-700/50 transition-colors">
-                <div className="flex items-start justify-between mb-4">
-                  <div className="bg-primary-900/50 border border-primary-700/50 rounded-xl px-3 py-1.5">
-                    <p className="text-primary-300 text-xs font-medium">{show.estado}</p>
+          {proximosShows.length === 0 ? (
+            <div className="card p-10 text-center">
+              <p className="text-3xl mb-3">🎵</p>
+              <p className="text-white font-semibold mb-1">Novidades em breve!</p>
+              <p className="text-gray-400 text-sm">Novos shows estão sendo agendados. Siga o Facebook para ficar por dentro.</p>
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {proximosShows.map((show) => (
+                <div key={show.id} className="card p-6 hover:border-primary-700/50 transition-colors">
+                  <div className="flex items-start justify-between mb-4">
+                    <div className="bg-primary-900/50 border border-primary-700/50 rounded-xl px-3 py-1.5">
+                      <p className="text-primary-300 text-xs font-medium">{show.estado}</p>
+                    </div>
+                    <div className="text-right">
+                      <p className="text-primary-400 text-sm font-medium">{show.hora}</p>
+                    </div>
                   </div>
-                  <div className="text-right">
-                    <p className="text-primary-400 text-sm font-medium">{show.hora}</p>
-                  </div>
+                  <p className="text-gray-400 text-sm mb-1">{formatDate(show.data)}</p>
+                  <h3 className="text-white font-semibold text-lg mb-1">{show.evento}</h3>
+                  <p className="text-gray-400 text-sm">{show.local}</p>
+                  <p className="text-gray-500 text-sm">{show.cidade} — {show.estado}</p>
                 </div>
-                <p className="text-gray-400 text-sm mb-1">{formatDate(show.data)}</p>
-                <h3 className="text-white font-semibold text-lg mb-1">{show.evento}</h3>
-                <p className="text-gray-400 text-sm">{show.local}</p>
-                <p className="text-gray-500 text-sm">{show.cidade} — {show.estado}</p>
-              </div>
-            ))}
-          </div>
+              ))}
+            </div>
+          )}
         </div>
       </section>
 

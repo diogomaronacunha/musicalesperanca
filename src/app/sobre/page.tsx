@@ -46,7 +46,7 @@ export default function SobrePage() {
             <div className="space-y-5 text-gray-300 leading-relaxed text-lg">
               <p>
                 A <strong className="text-white">Musical Esperança</strong> nasceu da paixão pela música e pela tradição dos bailes no Sul do Brasil.
-                Formada por cinco músicos apaixonados pelo que fazem, a banda carrega no nome a essência do que representa:
+                Formada por três músicos apaixonados pelo que fazem, a banda carrega no nome a essência do que representa:
                 esperança, alegria e emoção em cada apresentação.
               </p>
               <p>
@@ -93,7 +93,7 @@ export default function SobrePage() {
             <h2 className="section-title">Os Integrantes</h2>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 max-w-2xl mx-auto">
             {integrantes.map((integrante) => (
               <div key={integrante.id} className="card p-6 text-center hover:border-primary-700/50 transition-colors">
                 {/* Foto placeholder */}
@@ -114,7 +114,7 @@ export default function SobrePage() {
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
             {[
-              { numero: '5', label: 'Integrantes' },
+              { numero: '3', label: 'Integrantes' },
               { numero: '2', label: 'Estados atendidos' },
               { numero: '100+', label: 'Cidades visitadas' },
               { numero: '500+', label: 'Shows realizados' },

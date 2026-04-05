@@ -58,7 +58,7 @@ export default function ContratacaoPage() {
                 <h3 className="text-white font-semibold text-lg mb-4">🎯 O que incluímos</h3>
                 <ul className="space-y-2 text-sm text-gray-400">
                   {[
-                    '5 músicos profissionais',
+                    '3 músicos profissionais',
                     'Equipamento de som completo',
                     'Iluminação de palco',
                     'Repertório personalizado',
